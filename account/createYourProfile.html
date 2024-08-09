@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/176360625?s=100&u=5fab0b498e5ecafe917886c3daa2313927b30517&v=4" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+		<title>Create your profile! - Form | SocialConnect</title>
+				<meta name="description" content="SocialConnect is a site where you can connect your social media and put it into a profile of your dreams!">
+
+			<meta property="og:url" content="nothingbuttyler.github.io" />
+      <meta property="og:image:width" content="200 px" />
+      <meta property="og:image:height" content="200 px" />
+      <meta property="og:title" content="SocialConnect: create a profile for all your social media" />
+      <meta property="og:site_name" content="SocialConnect" />
+      <meta property="og:description" content="SocialConnect is a site where you can connect your social media and put it into a profile of your dreams!" />
+      <meta property="og:type" content="website" />
+      
+
+
+						<link rel="stylesheet" type="text/css" href="//gamesuperhot.github.io/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="//gamesuperhot.github.io/css/jquery-comments.css" />
+		<link rel="stylesheet" type="text/css" href="//gamesuperhot.github.io/css/user.css" />
+		<link rel="stylesheet" type="text/css" href="//gamesuperhot.github.io/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="//gamesuperhot.github.io/css/custom.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+		<!-- Google fonts-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <!--font awesome-->
+        <script src="https://kit.fontawesome.com/eeb01edac2.js" crossorigin="anonymous"></script>
+        <!--end of font awesome-->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBSZ8QWCDE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MBSZ8QWCDE');
+</script>
+
+
+<!--back to top btn-->
+<button onclick="topFunction()" id="myBtn" title="Go back to the top.">&uarr;</button>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<!-- end of back to top btn-->
+
+<style>
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: darkblue; /* Set a background color, originally red */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: blue; /* Add a dark-grey background on hover, originally #555 */
+}
+</style>
+<script>
+// Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+<!--end of back to top btn-->
+
+
+
+
+<!--Button 29-->
+<style>
+/* CSS */
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button-29:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+</style>
+<!--end of Button 29-->
+
+
+</head>
+	<body id="page-top" style="background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NBw0HDQ0HDQcHBw0HBw0NDQ8NDQ0NFREiFhURExMYHSggGCYlJxUVITEhMSkrLi4uFx8zODMsNygtLisBCgoKDg0NDw0PFS0ZFRktKys3LSsrKysrLTctKy0rLS0rKzctNzcrLS0rKysrKystKysrKysrKysrLS0rLSsrK//AABEIALcBEwMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAACAAEGBQP/xAAXEAEBAQEAAAAAAAAAAAAAAAABABEC/8QAGwEBAQEAAwEBAAAAAAAAAAAAAAIBAwQFBgf/xAAYEQEBAQEBAAAAAAAAAAAAAAAAAQIREv/aAAwDAQACEQMRAD8A7Oqq7j8rVVUFVVBVVQVVUFVVBVVQVVUFVVBVVQVVZBtli2LbwatixWK1TLeEsVsWK3JMtJYrFYrVMtJYrYsVuSZCWKxWK1TLeHtXz2qvLePWqqvOcSqqgqqoKqqCqqgqqoKqqCqqgqqzYNssWK2yBLYsVitcy3hLFYrYtcy0lisVitcy0lisVsWuZGrYsVitcy3hLFbFitcy0lisVitcy0ttvntW+R7tVV5DhVVUFVVBVVQVVUFVVBVVmwbZtixW3gSxWK2LXMt4SxWKxWuZaSxWK2LXMtJYrFYrXMhLFYrYtcy0lisVitcy0lsWKxWuZaSxWKxWuZbwlitixWuZbwtqG1VxvHSVVXgusqqoKqqCqqgqqzYNs2xYrbwJYrFbFrmW8atixWK1zLSWKxWxa5lrVsWKxWuZCWKxWxa5lvGrYsVitcy0lisVsWuZaSxWKxWuZbwlisVsWuZbwlisVitcy0litixWuZaW23z2qvI6uqq+bdVVVQVVZsG2bFbFqkCWKxWK1TLeEsVsWK1zLSWKxWK1zLSWK2LFa5lpLFYrFa5k4S2LFYrXMtJYrFbFrmWtWxYrFa5lvCWKxWxa5lvGrYsVitcy0lisVsWuZa1bFisVrmWksViti1zLS2obVXkdlVWLfKum2zYrFapAlsWKxWqZbwlisVsWuZa1bFisVrmWksViti1zLWrYsVitcyEsVsWK1zLSWL1FYrXMtJYrFbFrmW8JYrFYrXMt4S2LFYrXMtJYrFYrXMtJYrYsVrmWksViti1zLWrYsVitcyEsVitVyNbtlVaO0WKxWxb5WZdPhLFYrFa5lpLYsVitcy0lisVitcy0litixWqZbwlisVsWuZCWKxWK1zLSWKxWK1zLeEtixWK1zLeEsViti1zLWrYsVityTLSWKxWxa5GksVisVqmWktixWK1zISxWO1XI1bVVa1VVQVVUHWrFYrYt83MuoSxWKxWuZbwlisVsWuZaSxWKxWuZCWKxWxa5lpLFYrFa5lvCWxYrFa5lvCWKxWK1zLSWxYrFa5lpLFYrFa5lpLYsVitcy0lisVsWuZa1bFjtVcFtVVrVVVBVVQVVUFVVB0yxWK2LeDMus1bFisVrmQlisVsWuZa1bFisVrmW8JYrFbFrmW8JYrFYrXMtJYrFbFrmWtWxYrFa5lpLFbFitcy0lisVitcy0titm1VwW1VWtVVUFVVBVVQVVUFVVBVVQe+sVisVvHmXXJYrYsVrmW8JYrFbFrmVcatixWK1zISxWK2LXMtatixWK1zLSWKxWxa5lrVsWKxWuZaSxWyquC2qq1qqqgqqoKqqCqqgqqoKqqCqqgqqoPXWxYrFbzZlxcJYrFbFrmQlisVitcy0lisVsWuZaSxWK2LXMtatixWK1zLeEsVsqrgqqrWqqqCqqgqqoKqqCqqgqqoKqqCqqgqqoKqqD0FsWqulI4xWK1VcjRWzaquRorFaquQYsVsquNVVVrVVVBVVQVVUFVVBVVQVVUFVVBVVQVVUFVVBVVQVVUH/2Q=='); background-size: cover;">
+		<!-- Navigation-->
+		<nav class="navbar navbar-expand-lg navbar-dark top-nav" id="mainNav">
+			<div class="container">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation" style="background-color: black;">
+					<span class="navbar-toggler-icon" onclick="openNav()" style="color: black;"></span>
+				</button>
+                
+                
+<div id="mySidenav" class="sidenav">
+  <a class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="/error/753/dashboarderror.html">Go to your Dashboard</a>
+  <a href="//nothingbuttyler.github.io">NothingButTyler's Website</a>
+  <a href="/logout">Log Out</a>
+</div>
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+  
+</div>
+<style>
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: blue; /* Black, originally #111*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 25px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;/* originally #818181 */
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: black; /* originally #f1f1f1 */
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<script>
+/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
+				<a class="navbar-brand js-scroll-trigger" href="/">
+      <!--    <img src="https://social-connect.github.io/media/images/favicons/20240725_212853.jpg"></img>-->
+      <img src="https://avatars.githubusercontent.com/u/176360625?s=100&u=5fab0b498e5ecafe917886c3daa2313927b30517&v=4" alt="Social Connect logo" title="Social Connect"></img>
+        </a>
+	
+
+				<div class="navbar-collapse collapse" id="nav-menu">
+
+		
+
+				</div>
+				<div class="d-none d-lg-block">
+			
+        <ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="/logout" id="PopupButton">&nbsp;Log Out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/error/753/dashboarderror">Go to your dashboard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li class="nav-item " style="background-color: blue;border: none;"><a class="nav-link " href="/account/CreateYourProfile">&nbsp;&nbsp;&nbsp;&nbsp;Go to Create your Profile form!&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            
+
+  
+
+        
+
+<!--
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> &#10247;</a>
+              <ul role="menu" class="dropdown-menu">
+                <li><a class="dropdown-item" href="/error137/pageclosed/robloxgfxs/pageclosed">Roblox GFX's (Closed)</a></li>
+      
+                <li><a class="dropdown-item" href="/forms">Forms</a></li>
+
+            </ul>
+            </li>
+-->
+          </ul>
+
+
+
+
+				</div>
+			</div>
+		</nav>		
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+<div class="banner-ad-wrapper"><div class="banner-ad-content" style="padding: 20px 0; text-align: center;">
+<!-- ads_ngang -->
+
+
+</div>
+
+
+
+</div>	
+
+<!--Scroller-->
+  <style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #808080;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0000FF;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00ffff;
+}
+</style>
+<!--end of scroller-->
+<!--
+right click menu
+right click menu style
+	<style type="text/css"> 
+		.context-menu { 
+			position: absolute; 
+			text-align: center; 
+			background: white; 
+			border: 1px solid black; 
+		} 
+
+		.context-menu ul { 
+			padding: 0px; 
+			margin: 0px; 
+			min-width: 150px; 
+			list-style: none; 
+		} 
+
+		.context-menu ul li { 
+			padding-bottom: 7px; 
+			padding-top: 7px; 
+			border: 1px solid black; 
+		} 
+
+		.context-menu ul li a { 
+			text-decoration: none; 
+			color: black; 
+		} 
+
+		.context-menu ul li:hover { 
+			background: lightblue; 
+		} 
+	</style> 
+
+end of right click menu style
+right click menu script
+	<script> 
+		document.onclick = hideMenu; 
+		document.oncontextmenu = rightClick; 
+
+		function hideMenu() { 
+			document.getElementById( 
+				"contextMenu").style.display = "none" 
+		} 
+
+		function rightClick(e) { 
+			e.preventDefault(); 
+
+			if (document.getElementById( 
+				"contextMenu").style.display == "block") 
+				hideMenu(); 
+			else { 
+				var menu = document 
+					.getElementById("contextMenu") 
+					
+				menu.style.display = 'block'; 
+				menu.style.left = e.pageX + "px"; 
+				menu.style.top = e.pageY + "px"; 
+			} 
+		} 
+	</script> 
+    end of right click menu script
+    right click menu items
+    	<div id="contextMenu" class="context-menu"
+		style="display:none"> 
+		<ul> 
+			<li><a href="/">Go to the homepage</a></li> 
+			<li><a href="/login"></a></li> 
+			<li><a href="/birthdaycountdown">Go to NothingButTyler's Birthday Countdown</a></li> 
+			<li><a href="/socialmedia">Go to Social Media</a></li> 
+			<li><a href="/contactnothingbuttyler">Go to Contact NothingButTyler</a></li> 
+			<li><a href="/funfacts">Go to Fun Facts</a></li> 
+			<li><a href="/otherwebsites">Go to Other Websites NothingButTyler Made</a></li> 
+            <li><a href="/error137/pageclosed/robloxgfxs/pageclosed">Go to Roblox GFX's (Closed)</a></li>
+            <li><a href="/forms">Go to Forms</a></li>
+		</ul> 
+	</div> 
+    end of right click menu items
+end of right click menu
+-->
+<!--container-->
+
+<center>
+<h1><font color="#fff">You made it! Let's get started!</font></h1>
+<p><font color="white">It's time to complete the Create your profile form! Enter the form below!</p>
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeeT7a89p3OkU6mb769iglkxZCqqO9RpmeWeZeAMtuZRncX_Q/viewform?embedded=true" width="640" height="5660" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+<a href="/account/createYourProfile/submitted"><button class="button-29">Submit form</button></a>
+<!--<img src="https://avatars.githubusercontent.com/u/176360625?s=999&u=5fab0b498e5ecafe917886c3daa2313927b30517&v=4" alt="SocialConnect logo" title="SocialConnect"></img>-->
+<br></br>
+<!--Mini footer-->
+<p class="footer-copyright py-4">SocialConnect - Copyright &copy; 2024 by NothingButTyler. All rights reserved.</p>
+</center>
+</font>
+
+
+</div> <!-- end container -->
+
+  
+  
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: black; /* originally #aaaaaa */
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #aaaaaa; /* originally #000 (black) */
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+<!--end of Popup Button style-->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+<!--end of The Modal-->
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>Are you sure you want to leave?</h1>
+    <p>If you leave, you'll get <b>logged out</b> and you won't be able to create your profile.</p>
+    <center><a href="/logout"><button class="button-29">Yes, sign me out</button></a>
+    <p>Press the &times; to create your profile and not be signed out.</p>
+  </div>
+
+</div>
+<!--end of Modal content-->
+<!--Popup Button script-->
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("PopupButton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<!--end of Popup Button script-->
+<!--end of Popup Button-->
+
+
+
+<!--Footer-->
+	<div class="footer-copyright py-4">
+		<div class="container">
+		<p><img src="https://avatars.githubusercontent.com/u/176360625?s=45&u=5fab0b498e5ecafe917886c3daa2313927b30517&v=4">	SocialConnect			</p><span class="dsb-panel">
+				<a href="/">Home</a> - <a href="/account/create/signup">Sign Up</a> - <a href="/account/login">Log In</a>			</span>
+		</div>
+	</div>
+    <!--end of footer-->
+    <!--all scripts-->
+	<script type="text/javascript" src="//gamesuperhot.github.io/js/jquery-3.6.2.min.js"></script>
+	<script type="text/javascript" src="//gamesuperhot.github.io/js/lazysizes.min.js"></script>
+	<script type="text/javascript" src="//gamesuperhot.github.io/js/popper.min.js"></script>
+	<script type="text/javascript" src="//gamesuperhot.github.io/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="//gamesuperhot.github.io/js/script.js"></script>
+	<script type="text/javascript" src="//gamesuperhot.github.io/js/custom.js"></script>
+    <!--end of all scripts-->
+	  </body>
+</html>
