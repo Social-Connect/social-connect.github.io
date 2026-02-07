@@ -1,533 +1,850 @@
+<!-- 136 -->
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-	<head>
-		<link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/176360625?s=100&u=5fab0b498e5ecafe917886c3daa2313927b30517&v=4" />
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
-		<title>Create a profile for all your social media | SocialConnect</title>
-				<meta name="description" content="SocialConnect is a site where you can connect your social media and put it into a profile of your dreams!">
-
-			<meta property="og:url" content="nothingbuttyler.github.io" />
-      <meta property="og:image:width" content="200 px" />
-      <meta property="og:image:height" content="200 px" />
-      <meta property="og:title" content="SocialConnect: create a profile for all your social media" />
-      <meta property="og:site_name" content="SocialConnect" />
-      <meta property="og:description" content="SocialConnect is a site where you can connect your social media and put it into a profile of your dreams!" />
-      <meta property="og:type" content="website" />
-      
-
-
-						<link rel="stylesheet" type="text/css" href="//gamesuperhot.github.io/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="//gamesuperhot.github.io/css/jquery-comments.css" />
-		<link rel="stylesheet" type="text/css" href="//gamesuperhot.github.io/css/user.css" />
-		<link rel="stylesheet" type="text/css" href="//gamesuperhot.github.io/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="//gamesuperhot.github.io/css/custom.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
-		<!-- Google fonts-->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-        <!--font awesome-->
-        <script src="https://kit.fontawesome.com/eeb01edac2.js" crossorigin="anonymous"></script>
-        <!--end of font awesome-->
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBSZ8QWCDE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MBSZ8QWCDE');
-</script>
-
-
-<!--back to top btn-->
-<button onclick="topFunction()" id="myBtn" title="Go back to the top.">&uarr;</button>
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialConnect | Simple. Custom. Yours.</title>
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/176360625?s=100&u=5fab0b498e5ecafe917886c3daa2313927b30517&v=4">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+:root { 
+    --primary: #111111; 
+    --accent: #5002b0; 
+    --gray: #6b7280; 
+    --bg: #ffffff; 
+    --card-bg: #fafafa;
+    --text: #111111;
+    --border: #eeeeee;
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+body { 
+    margin: 0; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text); 
+    overflow-x: hidden;
+}
+
+/* --- Navbar & Menu Animation --- */
+nav { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 20px 8%; background: var(--bg); 
+    position: sticky; top: 0; z-index: 3000; 
+    border-bottom: 1px solid var(--border);
+}
+
+.logo { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; text-decoration: none; color: var(--text); }
+.logo img { height: 32px; width: auto; margin-right: 10px; border-radius: 6px; }
+.logo span { color: var(--accent); }
+
+.nav-links { display: flex; align-items: center; list-style: none; gap: 30px; margin: 0; padding: 0; }
+.nav-links li a { text-decoration: none; color: var(--text); font-weight: 600; }
+
+.menu-toggle { 
+    display: none; cursor: pointer; font-size: 2rem; 
+    color: var(--text); z-index: 4000; 
+    transition: transform 0.3s ease; 
+}
+.menu-toggle.open { transform: rotate(90deg); color: var(--accent); }
+
+@media (max-width: 850px) {
+    .menu-toggle { display: block; }
+    .nav-links { 
+        position: fixed; top: 0; right: -100%; height: 100vh; width: 100vw; 
+        background: var(--bg); flex-direction: column; justify-content: center; 
+        align-items: center; transition: 0.4s ease-in-out; z-index: 3500; 
     }
-  }
-}
-</script>
-<!-- end of back to top btn-->
-
-<style>
-#myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: darkblue; /* Set a background color, originally red */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
+    .nav-links.active { right: 0; }
+    .nav-links li { margin: 15px 0; }
 }
 
-#myBtn:hover {
-  background-color: blue; /* Add a dark-grey background on hover, originally #555 */
-}
-</style>
-<script>
-// Get the button:
-let mybutton = document.getElementById("myBtn");
+/* --- Sections --- */
+.hero { text-align: center; padding: 80px 5% 40px; }
+h1 { font-size: 3.2rem; font-weight: 800; letter-spacing: -2px; margin: 0; }
+.hero p { color: var(--gray); font-size: 1.1rem; margin: 20px auto 40px; }
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+.about-site { padding: 60px 8%; text-align: center; background: var(--card-bg); border-bottom: 1px solid var(--border); }
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-</script>
-<!--end of back to top btn-->
-
-
-
-
-<!--Button 29-->
-<style>
-/* CSS */
-.button-29 {
-  align-items: center;
-  appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
-  border: 0;
-  border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
-  height: 48px;
-  justify-content: center;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow,transform;
-  font-size: 18px;
+/* --- Live Editor --- */
+.playground { padding: 60px 5%; }
+/* Ensure the container is big enough to show the phone */
+.playground-container { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 40px; 
+    background: var(--card-bg); 
+    padding: 60px 20px; 
+    border-radius: 35px; 
+    align-items: center; 
+    border: 1px solid var(--border);
+    min-height: 600px; /* Forces the container to stay open */
 }
 
-.button-29:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+/* The Phone Frame itself */
+.phone-frame { 
+    width: 280px; 
+    height: 520px; /* Explicit height so it doesn't disappear */
+    border: 12px solid #111; 
+    border-radius: 45px; 
+    background: white; 
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-.button-29:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-  transform: translateY(-2px);
+/* Make sure the content inside is visible */
+.phone-content { 
+    padding: 30px 20px; 
+    text-align: center; 
+    height: 100%;
 }
 
-.button-29:active {
-  box-shadow: #3c4fe0 0 3px 7px inset;
-  transform: translateY(2px);
+.control-group { width: 100%; max-width: 300px; margin-bottom: 15px; }
+.control-group label { font-weight: 800; font-size: 0.7rem; color: var(--gray); display: block; margin-bottom: 8px; text-transform: uppercase; }
+.control-group input, .control-group select { 
+    width: 100%; padding: 14px; border-radius: 12px; 
+    border: 1px solid var(--border); background: var(--bg); color: var(--text); 
+    box-sizing: border-box; 
 }
-</style>
-<!--end of Button 29-->
 
+/* --- Claim Area (Optimized for Long Names) --- */
+.conclusion { padding: 60px 5%; text-align: center; }
+.cta-card { 
+    background: #111; color: white; padding: 50px 25px; 
+    border-radius: 40px; max-width: 500px; margin: 0 auto; 
+}
+.cta-input-group { 
+    display: flex; background: white; border-radius: 15px; 
+    padding: 6px; margin: 25px 0; align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.cta-input-group input { 
+    border: none; padding: 12px 15px; flex: 2; /* Increased flex to give name more space */
+    outline: none; color: #111; min-width: 0; font-size: 1rem;
+}
+.btn-claim { 
+    background: var(--accent); color: white; border: none; 
+    padding: 12px 25px; border-radius: 12px; font-weight: 800; 
+    cursor: pointer; white-space: nowrap; /* Prevents button text from wrapping */
+}
 
+/* --- Footer Alignment --- */
+footer { background: #000; color: white; padding: 60px 8% 30px; text-align: left; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-col a { display: block; color: #888; text-decoration: none; margin-bottom: 10px; font-size: 0.9rem; }
+
+.footer-bottom { 
+    padding-top: 25px; border-top: 1px solid #222; 
+    color: #555; font-size: 0.8rem; 
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; 
+    text-align: center;
+}
+.btn-filled { background: #38007D; color: white; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-weight: 600; }
+    
+    .btn-claim:hover, .btn-filled:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(80, 2, 176, 0.3);
+    filter: brightness(1.1);
+}
+
+/* The Profile Circle */
+.profile-pic { 
+    width: 85px; 
+    height: 85px; 
+    background: #e5e7eb; /* Light grey placeholder */
+    border-radius: 50%; 
+    margin: 0 auto 20px; 
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* The Name under the circle */
+#previewName {
+    font-weight: 800;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    color: #111;
+}
+
+/* The Buttons inside the phone */
+.link-bar { 
+    background: var(--accent); /* Uses your signature purple */
+    color: white; 
+    padding: 14px; 
+    border-radius: 14px; 
+    margin-bottom: 12px; 
+    font-weight: 700; 
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(80, 2, 176, 0.15);
+}
+    
+    /* This makes the phone background and text colors fade smoothly */
+.phone-frame, #previewName {
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.4s ease, 
+                color 0.4s ease;
+}
+
+/* This makes the buttons (link bars) slide into their new accent colors */
+.link-bar {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Styling the Select Dropdown */
+#playTheme {
+    appearance: none; /* Removes default browser arrow */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#playTheme:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(80, 2, 176, 0.1);
+}
+
+#playTheme:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* Optional: Style the actual options inside (Limited support in browsers) */
+#playTheme option {
+    background: white;
+    color: black;
+    padding: 10px;
+}
+    
+    #customControls {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.link-bar:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+        </style>
 </head>
-	<body id="page-top" style="background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NBw0HDQ0HDQcHBw0HBw0NDQ8NDQ0NFREiFhURExMYHSggGCYlJxUVITEhMSkrLi4uFx8zODMsNygtLisBCgoKDg0NDw0PFS0ZFRktKys3LSsrKysrLTctKy0rLS0rKzctNzcrLS0rKysrKystKysrKysrKysrLS0rLSsrK//AABEIALcBEwMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAACAAEGBQP/xAAXEAEBAQEAAAAAAAAAAAAAAAABABEC/8QAGwEBAQEAAwEBAAAAAAAAAAAAAAIBAwQFBgf/xAAYEQEBAQEBAAAAAAAAAAAAAAAAAQIREv/aAAwDAQACEQMRAD8A7Oqq7j8rVVUFVVBVVQVVUFVVBVVQVVUFVVBVVQVVZBtli2LbwatixWK1TLeEsVsWK3JMtJYrFYrVMtJYrYsVuSZCWKxWK1TLeHtXz2qvLePWqqvOcSqqgqqoKqqCqqgqqoKqqCqqgqqzYNssWK2yBLYsVitcy3hLFYrYtcy0lisVitcy0lisVsWuZGrYsVitcy3hLFbFitcy0lisVitcy0ttvntW+R7tVV5DhVVUFVVBVVQVVUFVVBVVmwbZtixW3gSxWK2LXMt4SxWKxWuZaSxWK2LXMtJYrFYrXMhLFYrYtcy0lisVitcy0lsWKxWuZaSxWKxWuZbwlitixWuZbwtqG1VxvHSVVXgusqqoKqqCqqgqqzYNs2xYrbwJYrFbFrmW8atixWK1zLSWKxWxa5lrVsWKxWuZCWKxWxa5lvGrYsVitcy0lisVsWuZaSxWKxWuZbwlisVsWuZbwlisVitcy0litixWuZaW23z2qvI6uqq+bdVVVQVVZsG2bFbFqkCWKxWK1TLeEsVsWK1zLSWKxWK1zLSWK2LFa5lpLFYrFa5k4S2LFYrXMtJYrFbFrmWtWxYrFa5lvCWKxWxa5lvGrYsVitcy0lisVsWuZa1bFisVrmWksViti1zLS2obVXkdlVWLfKum2zYrFapAlsWKxWqZbwlisVsWuZa1bFisVrmWksViti1zLWrYsVitcyEsVsWK1zLSWL1FYrXMtJYrFbFrmW8JYrFYrXMt4S2LFYrXMtJYrFYrXMtJYrYsVrmWksViti1zLWrYsVitcyEsVitVyNbtlVaO0WKxWxb5WZdPhLFYrFa5lpLYsVitcy0lisVitcy0litixWqZbwlisVsWuZCWKxWK1zLSWKxWK1zLeEtixWK1zLeEsViti1zLWrYsVityTLSWKxWxa5GksVisVqmWktixWK1zISxWO1XI1bVVa1VVQVVUHWrFYrYt83MuoSxWKxWuZbwlisVsWuZaSxWKxWuZCWKxWxa5lpLFYrFa5lvCWxYrFa5lvCWKxWK1zLSWxYrFa5lpLFYrFa5lpLYsVitcy0lisVsWuZa1bFjtVcFtVVrVVVBVVQVVUFVVB0yxWK2LeDMus1bFisVrmQlisVsWuZa1bFisVrmW8JYrFbFrmW8JYrFYrXMtJYrFbFrmWtWxYrFa5lpLFbFitcy0lisVitcy0titm1VwW1VWtVVUFVVBVVQVVUFVVBVVQe+sVisVvHmXXJYrYsVrmW8JYrFbFrmVcatixWK1zISxWK2LXMtatixWK1zLSWKxWxa5lrVsWKxWuZaSxWyquC2qq1qqqgqqoKqqCqqgqqoKqqCqqgqqoPXWxYrFbzZlxcJYrFbFrmQlisVitcy0lisVsWuZaSxWK2LXMtatixWK1zLeEsVsqrgqqrWqqqCqqgqqoKqqCqqgqqoKqqCqqgqqoKqqD0FsWqulI4xWK1VcjRWzaquRorFaquQYsVsquNVVVrVVVBVVQVVUFVVBVVQVVUFVVBVVQVVUFVVBVVQVVUH/2Q=='); background-size: cover;">
-		<!-- Navigation-->
-		<nav class="navbar navbar-expand-lg navbar-dark top-nav" id="mainNav">
-			<div class="container">
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation" style="background-color: black;">
-					<span class="navbar-toggler-icon" onclick="openNav()" style="color: black;"></span>
-				</button>
-                
-                
-<div id="mySidenav" class="sidenav">
-  <a class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="/account/create/signup">Create your profile today!</a>
-  <a href="//nothingbuttyler.github.io">NothingButTyler's Website</a>
-  <a href="/account/login">Log In</a>
-</div>
+<body>
 
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-<div id="main">
-  
-</div>
-<style>
-/* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  right: 0;
-  background-color: blue; /* Black, originally #111*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
+<nav>
+    <a href="#" class="logo">
+        <img src="https://social-connect.github.io/logos/SocialConnect_logo_white.jpg" alt="SocialConnect">
+        Social<span>Connect</span>
+    </a>
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <ul class="nav-links" id="nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/learnmore" class="btn-filled" style="color:white;">Learn More</a></li>
+    </ul>
+</nav>
 
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 25px;
-  text-decoration: none;
-  font-size: 25px;
-  color: white;/* originally #818181 */
-  display: block;
-  transition: 0.3s;
-}
+<main class="hero">
+    <h1>Coming <br><span style="color:var(--accent)">soon!</span></h1>
+    <p>Welcome to a site where you'll soon access a high-customization profile builder that's built for anyone.</p>
+    <p>To stay tuned, bookmark this page, and we'll see you then!</p>
+    <a href="/learnmore" class="btn-filled">Learn more</a>
+    <br /> <br /> <br />
+    <i>P.S. press CTRL + D to bookmark! It helps out faster!</i>
+    
+</main>
+    
+    <br />
+    <br />
+    <br />
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: black; /* originally #f1f1f1 */
-}
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="logo" style="color:white; margin-bottom: 15px;">Social<span style="color:var(--accent)">Connect</span></div>
+            <p style="color: #555; font-size: 0.9rem;">Simple. Custom. Yours.</p>
+        </div>
+        <div class="footer-col">
+            <h4>PRODUCT</h4>
+            <a>Coming soon!</a>
+        </div>
+        <div class="footer-col">
+            <h4>LEGAL</h4>
+            <a>Coming soon!</a> 
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 SocialConnect. Built by NothingButTyler
+    </div>
+</footer>
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-  cursor: pointer;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
 <script>
-/* Set the width of the side navigation to 250px */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
+const menuToggle = document.getElementById('mobile-menu');
+const navList = document.getElementById('nav-list');
 
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>
+// 1. Navbar Toggle
+menuToggle.onclick = () => {
+    navList.classList.toggle('active');
+    menuToggle.classList.toggle('open');
+    menuToggle.innerHTML = navList.classList.contains('active') ? '✕' : '☰';
+};
 
+// --- UPDATED LIVE EDITOR LOGIC ---
+const phone = document.getElementById('phonePreview');
+const nameText = document.getElementById('previewName');
+const bgPicker = document.getElementById('playBgColor');
+const textPicker = document.getElementById('playTextColor');
+const themeSelect = document.getElementById('playTheme');
+const customControls = document.getElementById('customControls'); // Make sure this matches your HTML ID
 
-				<a class="navbar-brand js-scroll-trigger" href="/">
-      <!--    <img src="https://social-connect.github.io/media/images/favicons/20240725_212853.jpg"></img>-->
-      <img src="https://avatars.githubusercontent.com/u/176360625?s=100&u=5fab0b498e5ecafe917886c3daa2313927b30517&v=4" alt="Social Connect logo" title="Social Connect"></img>
-        </a>
-	
-
-				<div class="navbar-collapse collapse" id="nav-menu">
-
-		
-
-				</div>
-				<div class="d-none d-lg-block">
-			
-        <ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="/account/login">&nbsp;Log In&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-                    <li class="nav-item " style="background-color: blue;border: none;"><a class="nav-link " href="/account/create/signup">&nbsp;&nbsp;&nbsp;&nbsp;Create a profile today!&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-            
-
-  
-
+themeSelect.onchange = function() {
+    const theme = this.value;
+    
+    if (theme === 'custom') {
+        // 1. Reveal the hidden menu
+        customControls.style.display = 'block';
+    } else {
+        // 2. Hide the menu for presets
+        customControls.style.display = 'none';
         
+        // 3. Apply the preset colors
+        const isDark = theme === 'dark';
+        const bg = isDark ? '#111111' : '#ffffff';
+        const txt = isDark ? '#ffffff' : '#111111';
+
+        phone.style.backgroundColor = bg;
+        nameText.style.color = txt;
+        
+        // Update pickers so they are ready if user switches to custom later
+        bgPicker.value = bg;
+        textPicker.value = txt;
+    }
+};
+
+// Handle individual color changes when in Custom mode
+bgPicker.oninput = (e) => {
+    phone.style.backgroundColor = e.target.value;
+};
+
+textPicker.oninput = (e) => {
+    nameText.style.color = e.target.value;
+};
+    
+    // Update Name with a "Fallback"
+document.getElementById('playName').oninput = (e) => {
+    const val = e.target.value.trim();
+    // If val is empty, show "Your Name", otherwise show the input
+    document.getElementById('previewName').textContent = val !== "" ? val : "Your Name";
+};
+
+
+// 3. Claim Username Logic
+document.getElementById('claimUsername').oninput = (e) => {
+    let slug = e.target.value.toLowerCase()
+        .replace(/[\s\u2800\u180E\u2000-\u200B\u202F\u205F\u3000\ufeff]/g, '')
+        .replace(/[^a-z0-9-]/g, '');
+        
+    if (slug.length > 20) slug = slug.substring(0, 20);
+    e.target.value = slug;
+    
+    const counter = document.getElementById('countDisplay');
+    counter.textContent = `${slug.length}/20`;
+    slug.length >= 20 ? counter.classList.add('limit') : counter.classList.remove('limit');
+
+    document.getElementById('urlPreview').textContent = `social-connect.github.io/p?u=${slug || 'yourname'}`;
+};
+
+document.querySelector('.btn-claim').onclick = () => {
+    const username = document.getElementById('claimUsername').value;
+    if (username) window.location.href = `/signup?reserved=${username}`;
+    else alert("Please enter a name first!");
+};
+
+// 4. Improved System Theme Detection
+
+// --- UPDATED SYSTEM DETECTION ---
+const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+function syncWithSystem(e) {
+    // We ONLY auto-switch if the user isn't already using "Custom"
+    if (themeSelect.value !== "custom") {
+        themeSelect.value = e.matches ? 'dark' : 'light';
+        
+        // Manually trigger the logic above to hide/show and set colors
+        themeSelect.dispatchEvent(new Event('change'));
+    }
+}
+
+systemDark.addEventListener('change', syncWithSystem);
+syncWithSystem(systemDark); // Run once on page load
+
+
+</script>
+</body>
+</html>
 
 <!--
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> &#10247;</a>
-              <ul role="menu" class="dropdown-menu">
-                <li><a class="dropdown-item" href="/error137/pageclosed/robloxgfxs/pageclosed">Roblox GFX's (Closed)</a></li>
-      
-                <li><a class="dropdown-item" href="/forms">Forms</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialConnect | Simple. Custom. Yours.</title>
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/176360625?s=100&u=5fab0b498e5ecafe917886c3daa2313927b30517&v=4">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+:root { 
+    --primary: #111111; 
+    --accent: #5002b0; 
+    --gray: #6b7280; 
+    --bg: #ffffff; 
+    --card-bg: #fafafa;
+    --text: #111111;
+    --border: #eeeeee;
+}
 
-            </ul>
-            </li>
--->
-          </ul>
+body { 
+    margin: 0; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text); 
+    overflow-x: hidden;
+}
 
+/* --- Navbar & Menu Animation --- */
+nav { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 20px 8%; background: var(--bg); 
+    position: sticky; top: 0; z-index: 3000; 
+    border-bottom: 1px solid var(--border);
+}
 
+.logo { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; text-decoration: none; color: var(--text); }
+.logo img { height: 32px; width: auto; margin-right: 10px; border-radius: 6px; }
+.logo span { color: var(--accent); }
 
+.nav-links { display: flex; align-items: center; list-style: none; gap: 30px; margin: 0; padding: 0; }
+.nav-links li a { text-decoration: none; color: var(--text); font-weight: 600; }
 
-				</div>
-			</div>
-		</nav>		
+.menu-toggle { 
+    display: none; cursor: pointer; font-size: 2rem; 
+    color: var(--text); z-index: 4000; 
+    transition: transform 0.3s ease; 
+}
+.menu-toggle.open { transform: rotate(90deg); color: var(--accent); }
 
+@media (max-width: 850px) {
+    .menu-toggle { display: block; }
+    .nav-links { 
+        position: fixed; top: 0; right: -100%; height: 100vh; width: 100vw; 
+        background: var(--bg); flex-direction: column; justify-content: center; 
+        align-items: center; transition: 0.4s ease-in-out; z-index: 3500; 
+    }
+    .nav-links.active { right: 0; }
+    .nav-links li { margin: 15px 0; }
+}
 
+/* --- Sections --- */
+.hero { text-align: center; padding: 80px 5% 40px; }
+h1 { font-size: 3.2rem; font-weight: 800; letter-spacing: -2px; margin: 0; }
+.hero p { color: var(--gray); font-size: 1.1rem; margin: 20px auto 40px; }
 
+.about-site { padding: 60px 8%; text-align: center; background: var(--card-bg); border-bottom: 1px solid var(--border); }
 
+/* --- Live Editor --- */
+.playground { padding: 60px 5%; }
+/* Ensure the container is big enough to show the phone */
+.playground-container { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 40px; 
+    background: var(--card-bg); 
+    padding: 60px 20px; 
+    border-radius: 35px; 
+    align-items: center; 
+    border: 1px solid var(--border);
+    min-height: 600px; /* Forces the container to stay open */
+}
 
+/* The Phone Frame itself */
+.phone-frame { 
+    width: 280px; 
+    height: 520px; /* Explicit height so it doesn't disappear */
+    border: 12px solid #111; 
+    border-radius: 45px; 
+    background: white; 
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
 
+/* Make sure the content inside is visible */
+.phone-content { 
+    padding: 30px 20px; 
+    text-align: center; 
+    height: 100%;
+}
 
+.control-group { width: 100%; max-width: 300px; margin-bottom: 15px; }
+.control-group label { font-weight: 800; font-size: 0.7rem; color: var(--gray); display: block; margin-bottom: 8px; text-transform: uppercase; }
+.control-group input, .control-group select { 
+    width: 100%; padding: 14px; border-radius: 12px; 
+    border: 1px solid var(--border); background: var(--bg); color: var(--text); 
+    box-sizing: border-box; 
+}
 
-<div class="container">
+/* --- Claim Area (Optimized for Long Names) --- */
+.conclusion { padding: 60px 5%; text-align: center; }
+.cta-card { 
+    background: #111; color: white; padding: 50px 25px; 
+    border-radius: 40px; max-width: 500px; margin: 0 auto; 
+}
+.cta-input-group { 
+    display: flex; background: white; border-radius: 15px; 
+    padding: 6px; margin: 25px 0; align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.cta-input-group input { 
+    border: none; padding: 12px 15px; flex: 2; /* Increased flex to give name more space */
+    outline: none; color: #111; min-width: 0; font-size: 1rem;
+}
+.btn-claim { 
+    background: var(--accent); color: white; border: none; 
+    padding: 12px 25px; border-radius: 12px; font-weight: 800; 
+    cursor: pointer; white-space: nowrap; /* Prevents button text from wrapping */
+}
 
+/* --- Footer Alignment --- */
+footer { background: #000; color: white; padding: 60px 8% 30px; text-align: left; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-col a { display: block; color: #888; text-decoration: none; margin-bottom: 10px; font-size: 0.9rem; }
 
-<div class="banner-ad-wrapper"><div class="banner-ad-content" style="padding: 20px 0; text-align: center;">
-<!-- ads_ngang -->
+.footer-bottom { 
+    padding-top: 25px; border-top: 1px solid #222; 
+    color: #555; font-size: 0.8rem; 
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; 
+    text-align: center;
+}
+.btn-filled { background: #38007D; color: white; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-weight: 600; }
+    
+    .btn-claim:hover, .btn-filled:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(80, 2, 176, 0.3);
+    filter: brightness(1.1);
+}
 
+/* The Profile Circle */
+.profile-pic { 
+    width: 85px; 
+    height: 85px; 
+    background: #e5e7eb; /* Light grey placeholder */
+    border-radius: 50%; 
+    margin: 0 auto 20px; 
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
 
+/* The Name under the circle */
+#previewName {
+    font-weight: 800;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    color: #111;
+}
+
+/* The Buttons inside the phone */
+.link-bar { 
+    background: var(--accent); /* Uses your signature purple */
+    color: white; 
+    padding: 14px; 
+    border-radius: 14px; 
+    margin-bottom: 12px; 
+    font-weight: 700; 
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(80, 2, 176, 0.15);
+}
+    
+    /* This makes the phone background and text colors fade smoothly */
+.phone-frame, #previewName {
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.4s ease, 
+                color 0.4s ease;
+}
+
+/* This makes the buttons (link bars) slide into their new accent colors */
+.link-bar {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Styling the Select Dropdown */
+#playTheme {
+    appearance: none; /* Removes default browser arrow */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#playTheme:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(80, 2, 176, 0.1);
+}
+
+#playTheme:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* Optional: Style the actual options inside (Limited support in browsers) */
+#playTheme option {
+    background: white;
+    color: black;
+    padding: 10px;
+}
+    
+    #customControls {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.link-bar:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+        </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="logo">
+        <img src="https://social-connect.github.io/logos/SocialConnect_logo_white.jpg" alt="SocialConnect">
+        Social<span>Connect</span>
+    </a>
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <ul class="nav-links" id="nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/test">Test the Editor</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup" class="btn-filled" style="color:white;">Get Started</a></li>
+    </ul>
+</nav>
+
+<main class="hero">
+    <h1>Your bio link, <br>just <span style="color:var(--accent)">better.</span></h1>
+    <p>The high-customization profile builder for creators.</p>
+    <a href="/signup" class="btn-filled" style="padding: 18px 36px; border-radius: 15px;">Build your profile</a>
+</main>
+    
+<section class="about-site">
+    <h2>About SocialConnect</h2>
+    <p>SocialConnect is a high-customization profile builder designed for creators. We help you own your digital identity with links that truly reflect your style.</p>
+</section>
+
+<section class="playground" id="playground">
+    <div class="playground-container">
+        <div class="playground-controls">
+            <h2 style="margin-top:0">Live Editor</h2>
+            <div class="control-group">
+                <label>Display Name</label>
+                <input type="text" id="playName" placeholder="Type your name..." maxlength="25">
+            </div>
+            <div class="control-group">
+                <label>Accent Color</label>
+                <input type="color" id="playColor" value="#5002b0" style="height:45px; padding:0; border:none; background:none; cursor:pointer;">
+            </div>
+<div class="control-group">
+    <label>Text Color</label>
+    <input type="color" id="playTextColor" value="#111111" style="height:45px; padding:0; border:none; background:none; cursor:pointer;">
+</div>
+<div class="control-group">
+    <label>Appearance Theme</label>
+    <select id="playTheme">
+        <option value="light">☀️ Light Mode</option>
+        <option value="dark">🌙 Dark Mode</option>
+        <option value="custom">🎨 Custom</option>
+    </select>
 </div>
 
+<div id="customControls" style="display: none; border-left: 3px solid var(--accent); padding-left: 15px; margin-top: 20px;">
+    <div class="control-group">
+        <label>Background Color</label>
+        <input type="color" id="playBgColor" value="#ffffff">
+    </div>
+</div>
+        </div>
+        
+   <div class="phone-frame" id="phonePreview">
+    <div class="phone-content">
+        <div class="profile-pic"></div>
+        
+        <h3 id="previewName">Your Name</h3>
+        
+        <div class="link-bar">YouTube</div>
+        <div class="link-bar">Instagram</div>
+        <div class="link-bar">Portfolio</div>
+    </div>
+</div>
+
+           <a href="/test" class="btn-filled" style="padding: 18px 36px; border-radius: 15px;">Test the Full Editor</a>
+
+    </div>
+</section>
+
+<section class="conclusion">
+<div class="cta-card">
+    <h2>Claim your link</h2>
+    <div class="input-header">
+        <label style="opacity:0"></label> <span class="char-count" id="countDisplay">0/20</span>
+    </div>
+    <div class="cta-input-group">
+        <input type="text" placeholder="yourname" id="claimUsername">
+        <button class="btn-claim">Claim</button>
+    </div>
+    <div id="urlPreview">social-connect.github.io/p?u=yourname</div>
+</div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="logo" style="color:white; margin-bottom: 15px;">Social<span style="color:var(--accent)">Connect</span></div>
+            <p style="color: #555; font-size: 0.9rem;">Simple. Custom. Yours.</p>
+        </div>
+        <div class="footer-col">
+            <h4>PRODUCT</h4>
+            <a href="/">Home</a>
+            <a href="/login">Log In</a>
+            <a href="/test">Test the Editor</a>
+        </div>
+        <div class="footer-col">
+            <h4>LEGAL</h4>
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Use</a>
+            <a href="https://discord.gg/wXwR5hPEPx">Discord Server</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 SocialConnect. Built by NothingButTyler
+    </div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById('mobile-menu');
+const navList = document.getElementById('nav-list');
+
+// 1. Navbar Toggle
+menuToggle.onclick = () => {
+    navList.classList.toggle('active');
+    menuToggle.classList.toggle('open');
+    menuToggle.innerHTML = navList.classList.contains('active') ? '✕' : '☰';
+};
+
+// --- UPDATED LIVE EDITOR LOGIC ---
+const phone = document.getElementById('phonePreview');
+const nameText = document.getElementById('previewName');
+const bgPicker = document.getElementById('playBgColor');
+const textPicker = document.getElementById('playTextColor');
+const themeSelect = document.getElementById('playTheme');
+const customControls = document.getElementById('customControls'); // Make sure this matches your HTML ID
+
+themeSelect.onchange = function() {
+    const theme = this.value;
+    
+    if (theme === 'custom') {
+        // 1. Reveal the hidden menu
+        customControls.style.display = 'block';
+    } else {
+        // 2. Hide the menu for presets
+        customControls.style.display = 'none';
+        
+        // 3. Apply the preset colors
+        const isDark = theme === 'dark';
+        const bg = isDark ? '#111111' : '#ffffff';
+        const txt = isDark ? '#ffffff' : '#111111';
+
+        phone.style.backgroundColor = bg;
+        nameText.style.color = txt;
+        
+        // Update pickers so they are ready if user switches to custom later
+        bgPicker.value = bg;
+        textPicker.value = txt;
+    }
+};
+
+// Handle individual color changes when in Custom mode
+bgPicker.oninput = (e) => {
+    phone.style.backgroundColor = e.target.value;
+};
+
+textPicker.oninput = (e) => {
+    nameText.style.color = e.target.value;
+};
+    
+    // Update Name with a "Fallback"
+document.getElementById('playName').oninput = (e) => {
+    const val = e.target.value.trim();
+    // If val is empty, show "Your Name", otherwise show the input
+    document.getElementById('previewName').textContent = val !== "" ? val : "Your Name";
+};
 
 
-</div>	
+// 3. Claim Username Logic
+document.getElementById('claimUsername').oninput = (e) => {
+    let slug = e.target.value.toLowerCase()
+        .replace(/[\s\u2800\u180E\u2000-\u200B\u202F\u205F\u3000\ufeff]/g, '')
+        .replace(/[^a-z0-9-]/g, '');
+        
+    if (slug.length > 20) slug = slug.substring(0, 20);
+    e.target.value = slug;
+    
+    const counter = document.getElementById('countDisplay');
+    counter.textContent = `${slug.length}/20`;
+    slug.length >= 20 ? counter.classList.add('limit') : counter.classList.remove('limit');
 
-<!--Scroller-->
-  <style>
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
+    document.getElementById('urlPreview').textContent = `social-connect.github.io/p?u=${slug || 'yourname'}`;
+};
+
+document.querySelector('.btn-claim').onclick = () => {
+    const username = document.getElementById('claimUsername').value;
+    if (username) window.location.href = `/signup?reserved=${username}`;
+    else alert("Please enter a name first!");
+};
+
+// 4. Improved System Theme Detection
+
+// --- UPDATED SYSTEM DETECTION ---
+const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+function syncWithSystem(e) {
+    // We ONLY auto-switch if the user isn't already using "Custom"
+    if (themeSelect.value !== "custom") {
+        themeSelect.value = e.matches ? 'dark' : 'light';
+        
+        // Manually trigger the logic above to hide/show and set colors
+        themeSelect.dispatchEvent(new Event('change'));
+    }
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #808080;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #0000FF;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #00ffff;
-}
-</style>
-<!--end of scroller-->
-<!--
-right click menu
-right click menu style
-	<style type="text/css"> 
-		.context-menu { 
-			position: absolute; 
-			text-align: center; 
-			background: white; 
-			border: 1px solid black; 
-		} 
-
-		.context-menu ul { 
-			padding: 0px; 
-			margin: 0px; 
-			min-width: 150px; 
-			list-style: none; 
-		} 
-
-		.context-menu ul li { 
-			padding-bottom: 7px; 
-			padding-top: 7px; 
-			border: 1px solid black; 
-		} 
-
-		.context-menu ul li a { 
-			text-decoration: none; 
-			color: black; 
-		} 
-
-		.context-menu ul li:hover { 
-			background: lightblue; 
-		} 
-	</style> 
-
-end of right click menu style
-right click menu script
-	<script> 
-		document.onclick = hideMenu; 
-		document.oncontextmenu = rightClick; 
-
-		function hideMenu() { 
-			document.getElementById( 
-				"contextMenu").style.display = "none" 
-		} 
-
-		function rightClick(e) { 
-			e.preventDefault(); 
-
-			if (document.getElementById( 
-				"contextMenu").style.display == "block") 
-				hideMenu(); 
-			else { 
-				var menu = document 
-					.getElementById("contextMenu") 
-					
-				menu.style.display = 'block'; 
-				menu.style.left = e.pageX + "px"; 
-				menu.style.top = e.pageY + "px"; 
-			} 
-		} 
-	</script> 
-    end of right click menu script
-    right click menu items
-    	<div id="contextMenu" class="context-menu"
-		style="display:none"> 
-		<ul> 
-			<li><a href="/">Go to the homepage</a></li> 
-			<li><a href="/login"></a></li> 
-			<li><a href="/birthdaycountdown">Go to NothingButTyler's Birthday Countdown</a></li> 
-			<li><a href="/socialmedia">Go to Social Media</a></li> 
-			<li><a href="/contactnothingbuttyler">Go to Contact NothingButTyler</a></li> 
-			<li><a href="/funfacts">Go to Fun Facts</a></li> 
-			<li><a href="/otherwebsites">Go to Other Websites NothingButTyler Made</a></li> 
-            <li><a href="/error137/pageclosed/robloxgfxs/pageclosed">Go to Roblox GFX's (Closed)</a></li>
-            <li><a href="/forms">Go to Forms</a></li>
-		</ul> 
-	</div> 
-    end of right click menu items
-end of right click menu
--->
-<!--container-->
-
-<center>
-<h1><font color="#fff">Create your very own profile for all of your social media, other links, and more!</font></h1>
-<p><font color="white">Welcome to SocialConnect</p>
-<img src="https://avatars.githubusercontent.com/u/176360625?s=999&u=5fab0b498e5ecafe917886c3daa2313927b30517&v=4" alt="SocialConnect logo" title="SocialConnect"></img>
-<br></br>
-<h1>About SocialConnect</h1>
-<p>SocialConnect is a site where you can connect your social media and put it into a profile of your dreams! You can also add other links and sponsored businesses and profiles to your profile! Awesome, right?</p>
-<hr></hr>
-<h1>Here are people that loved SocialConnect</h1>
-
-<!--What People Said About Us Table-->
-<!--What People Said About Us Table Style-->
-<style>
-#customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#customers td, #customers th {
-  border: 1px solid black;
-  padding: 8px;
-}
-
-#customers tr:nth-child(even){background-color: lightblue;}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  background-color: blue;
-  color: white;
-}
-</style>
-<!--End of What People Said About Us Table Style-->
-<!--What People Said About Us Full Table-->
-<table id="customers">
-  <tr>
-    <th><center>What People Said About Us!</th></center>
-  </tr>
-  <tr>
-    <td><center>"This is #2 of my favorite websites!" ~ NothingButTyler</center></td>
-  <tr>
-    <td><center><code><font color="black">That's all of our reviews for now. If you would like a review, contact NothingButTyler <a href="mailto:tylerbloxofficialyt@gmail.com">here</a>. We only have 9 left, so get yours now! (Yes, this includes this slot too.)</code></center></font></td>
-  <tr>
-    <td><center>&nbsp;</center></td>
-  <tr>
-    <td><center>&nbsp;</td>
-  <tr>
-    <td><center>&nbsp;</center></td>
-  <tr>
-    <td><center>&nbsp;</center></td>
-  <tr>
-    <td><center>&nbsp;</center></td>
-  <tr>
-    <td><center>&nbsp;</center></td>
-  <tr>
-    <td><center>&nbsp;</center></td>
-  <tr>
-    <td><center>&nbsp;</center></td>
-    </tr>
-</tr>
-</tr>
-</tr>
-</tr>
-</tr>
-</tr>
-</tr>
-</tr>
-</table>
-<!--End of What People Said About Us Full Table-->
-<!--End of What People Said About Us Table-->
-<hr style="border: none;"></hr>
-<hr></hr>
-<h1>Want a profile for all your awesome social media?</h1>
-<p>Sign up, create, and customize your profile today! Click the buttons below to log in or sign up.</p>
-
-<a href="/account/login"><button style="background-color: transparent;border: none;"><font color="white">Log In&nbsp;&nbsp;&nbsp;&nbsp;</font></button>
-
-<a href="/account/create/signup"><button class="button-29" role="button">&nbsp;&nbsp;Sign Up&nbsp;&nbsp;</button></a>
-
-<hr></hr>
-
-<h1 class="section-title">Thanks for viewing SocialConnect!</h1>
-
-<!--Mini footer-->
-<p class="footer-copyright py-4">SocialConnect - Copyright &copy; 2024 by NothingButTyler. All rights reserved.</p>
-</center>
-</font>
+systemDark.addEventListener('change', syncWithSystem);
+syncWithSystem(systemDark); // Run once on page load
 
 
-</div> <!-- end container -->
-
-
-
-
-
-<!--Footer-->
-	<div class="footer-copyright py-4">
-		<div class="container">
-		<p><img src="https://avatars.githubusercontent.com/u/176360625?s=45&u=5fab0b498e5ecafe917886c3daa2313927b30517&v=4">	SocialConnect			</p><span class="dsb-panel">
-				<a href="/">Home</a> - <a href="/account/create/signup">Sign Up</a> - <a href="/account/login">Log In</a>			</span>
-		</div>
-	</div>
-    <!--end of footer-->
-    <!--all scripts-->
-	<script type="text/javascript" src="//gamesuperhot.github.io/js/jquery-3.6.2.min.js"></script>
-	<script type="text/javascript" src="//gamesuperhot.github.io/js/lazysizes.min.js"></script>
-	<script type="text/javascript" src="//gamesuperhot.github.io/js/popper.min.js"></script>
-	<script type="text/javascript" src="//gamesuperhot.github.io/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="//gamesuperhot.github.io/js/script.js"></script>
-	<script type="text/javascript" src="//gamesuperhot.github.io/js/custom.js"></script>
-    <!--end of all scripts-->
-	  </body>
+</script>
+</body>
 </html>
+-->
